@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="index.html">CRUD</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#menu"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Musicas</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">Sair</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <section class="container mt-3">
+      <form
+        method="POST"
+        action=""
+        id="forms"
+        class="needs-validation"
+        novalidate
+      >
+        <div class="row">
+          <label class="col-3" for="musica">Musica</label>
+          <input
+            type="text"
+            name="musica"
+            id="musica"
+            placeholder="Musica"
+            class="form-control col-9"
+            required
+          />
+        </div>
+        <div class="row">
+          <label class="col-3" for="banda">Banda</label>
+          <select
+            name="banda_id"
+            id="banda"
+            class="form-control col-9"
+            required
+          ></select>
+        </div>
+        <div class="row">
+          <label class="col-3" for="album">Album</label>
+          <textarea
+            name="album"
+            id="album"
+            class="form-control col-9"
+            required
+          ></textarea>
+        </div>
+        <div class="row">
+          <label class="col-3" for="genero">Genero</label>
+          <textarea
+            name="genero"
+            id="genero"
+            class="form-control col-9"
+            required
+          ></textarea>
+        </div>
+        <div class="row">
+          <button type="submit" class="btn btn-success offset-3 col-9">
+            <i class="fa fa-save"></i> Salvar
+          </button>
+        </div>
+      </form>
+    </section>
+    <script src="./bundle.js"></script>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function () {
+        "use strict";
+        window.addEventListener(
+          "load",
+          function () {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName("needs-validation");
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function (
+              form
+            ) {
+              form.addEventListener(
+                "submit",
+                function (event) {
+                  if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                  }
+                  form.classList.add("was-validated");
+                },
+                false
+              );
+            });
+          },
+          false
+        );
+      })();
+    </script>
+  </body>
+</html>
