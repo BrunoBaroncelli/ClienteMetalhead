@@ -40,7 +40,7 @@ class Lista {
       const tr = document.createElement("tr");
       // coluna musica
       const tdMusica = document.createElement("td");
-      const musica = document.createTextNode(obj.musica);
+      const musica = document.createTextNode(obj.musica_nome);
       tdMusica.appendChild(musica);
       tr.appendChild(tdMusica);
       // coluna banda

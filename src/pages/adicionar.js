@@ -6,10 +6,10 @@ class Adiciona {
   async store() {
     try {
       const response = await api.post("/musicas", {
-        musica: this.musica,
+        musica_nome: this.musica_nome,
         banda_id: this.banda_id,
-        album: this.album,
         genero: this.genero,
+        album: this.album,
       });
       window.location.href = "/";
     } catch (error) {
@@ -19,11 +19,11 @@ class Adiciona {
 
   async form(event) {
     event.preventDefault();
-    this.musica = document.querySelector("input[name=musica]").value;
+    this.musica_nome = document.querySelector("input[name=musica_nome]").value;
     this.banda_id = document.querySelector("select[name=banda_id]").value;
-    this.album = document.querySelector("input[name=album]").value;
     this.genero = document.querySelector("input[name=genero]").value;
-    if (this.musica && this.banda_id && this.album && this.genero) {
+    this.album = document.querySelector("input[name=album]").value;
+    if (this.musica_nome && this.banda_id && this.genero && this.album) {
       await this.store();
     }
   }
