@@ -55,7 +55,7 @@ class App {
     bandas.data.forEach((obj) => {
       const option = document.createElement("option");
       option.setAttribute("value", obj.id);
-      const nomeBanda = document.createTextNode(obj.nome);
+      const nomeBanda = document.createTextNode(obj.nomeBanda);
       option.appendChild(nomeBanda);
       bandaSelect.appendChild(option);
     });
